@@ -1,0 +1,118 @@
+@use "sass:math";
+
+// flexbox
+
+
+$utilities:(
+  "padding":(
+    "prefix":"p",
+    "values":(
+      "0":0,
+      "1":$base-padding,
+      "2":$base-padding*2,
+      "3":$base-padding*4,
+      "4":$base-padding*6,
+      "5":$base-padding*8,
+    ),
+  ),
+  "margin":(
+    "prefix":"m",
+    "values":(
+      "0":0,
+      "1":$base-padding,
+      "2":$base-padding*2,
+      "3":$base-padding*4,
+      "4":$base-padding*6,
+      "5":$base-padding*8,
+    ),
+  ),
+  "margin-left":(
+    "prefix":"ml",
+    "values":(
+      "0":0,
+      "1":$base-padding,
+      "2":$base-padding*2,
+      "3":$base-padding*4,
+      "4":$base-padding*6,
+      "5":$base-padding*8,
+    ),
+  ),
+  "margin-right":(
+    "prefix":"mr",
+    "values":(
+      "0":0,
+      "1":$base-padding,
+      "2":$base-padding*2,
+      "3":$base-padding*4,
+      "4":$base-padding*6,
+      "5":$base-padding*8,
+    ),
+  ),
+  "margin-top":(
+    "prefix":"mt",
+    "values":(
+      "0":0,
+      "1":$base-padding,
+      "2":$base-padding*2,
+      "3":$base-padding*4,
+      "4":$base-padding*6,
+      "5":$base-padding*8,
+    ),
+  ),
+  "margin-bottom":(
+    "prefix":"mb",
+    "values":(
+      "0":0,
+      "1":$base-padding,
+      "2":$base-padding*2,
+      "3":$base-padding*4,
+      "4":$base-padding*6,
+      "5":$base-padding*8,
+    ),
+  ),
+
+  "display":(
+  "prefix":"display",
+  "values":(
+      "n":"none",
+      "b":"block",
+      "f":"flex",
+      "i":"inline",
+      "i-b":"inline-block"
+      )
+  ),
+  "padding-left":(
+  "prefix":"pl",
+  "values":(
+    "0":0,
+    "1":$base-padding,
+    "2":$base-padding*2,
+    "3":$base-padding*4,
+    "4":$base-padding*6,
+    "5":$base-padding*8,
+  ),
+
+  ),
+);
+
+
+// genereate utilitity class
+
+
+
+@each $property,$map in $utilities{
+  $prefix:map-get($map,"prefix");
+  $values:map-get($map,"values");
+
+  @each $k,$v in $values{
+    @if($k=="default"){
+      .#{$prefix}{
+        #{$property}:$v;
+      }
+    } @else{
+      .#{$prefix}-#{$k}{
+        #{$property}:$v;
+      }
+    }
+  }
+}

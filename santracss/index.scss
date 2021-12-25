@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,100;1,300&family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+// variables and function
+
+
+@import "_variables";
+@import "_colors";
+// base & layout
+
+@import "_base";
+
+// colors
+
+// components (button,card,navbar)
+@import "_utilities";
+@import "components/_card";
+@import "components/_buttons";
+@import "_breakpoints";
+@import "_grid";
+@import "components/_navbar";
+@import "_others";
+// utilities (margin,padding,opacity)

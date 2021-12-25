@@ -1,0 +1,36 @@
+@mixin btn($bg-color){
+  text-decoration: none;
+  display: inline-block;
+  cursor:pointer;
+  border:0;
+  outline:none;
+  padding:$base-padding $base-padding*2;
+  border-radius:10px;
+  background-color:$bg-color;
+
+
+}
+
+
+@each $key,$val in $colors{
+  .btn-#{$key}{
+    @include btn($val);
+    &:hover{
+      background-color:mix(black,$val,60);
+      color:#fff;
+      transition:1.3s all ease ;
+    }
+  }
+  .btn-outline-#{$key}{
+    @include btn(#fff);
+    color:$val;
+    border:$base-border-thickness solid $val;
+    &:hover{
+      background-color:$val;
+      color:#fff;
+      transition:1.3s all ease ;
+    }
+
+
+  }
+}
